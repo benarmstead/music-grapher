@@ -30,3 +30,19 @@ In the `main.py` file in the `get_all_data()` function.
 Change the `your_path = ""` vairable to the path of your CSV
 
 `python3 main.py`
+
+
+## Image Examples
+![Start](https://raw.githubusercontent.com/benarmstead/music-grapher/main/README_images/start.webp)
+
+![Menu](https://raw.githubusercontent.com/benarmstead/music-grapher/main/README_images/menu.webp)
+
+![Most Played Songs](https://raw.githubusercontent.com/benarmstead/music-grapher/main/README_images/most_played_songs-c.webp)
+
+![Most Played Artists](https://raw.githubusercontent.com/benarmstead/music-grapher/main/README_images/most-played-artists-c.webp)
+
+![Avg songs p/day](https://raw.githubusercontent.com/benarmstead/music-grapher/main/README_images/avg-songs-p-day.webp)
+
+![Most Played Days](https://raw.githubusercontent.com/benarmstead/music-grapher/main/README_images/most-played-days.webp)
+
+![Unique songs played](https://raw.githubusercontent.com/benarmstead/music-grapher/main/README_images/unique-songs-p-day.webp)
