@@ -1,4 +1,4 @@
-# Music grapher
+# Music Grapher
 Generates graphs on users music listening habits.
 
 This is meant for processing and analysing the data from my [cmus-music-monitor](https://github.com/benarmstead/cmus-music-monitor) shell script.
