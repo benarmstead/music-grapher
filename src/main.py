@@ -4,14 +4,12 @@ import csv
 import time
 import matplotlib.pyplot as plt
 
-global your_path
-
+# Plots the data to a chart aswell as limiting it to e.g. top 10 songs if neccecary
 def plotter(data, limit_to):
     label = []
     value = []
 
     length = len(data)
-    #print(data)
     for i in range(length):
         label.append(data[i][0])
         value.append(data[i][1])
@@ -28,20 +26,20 @@ def plotter(data, limit_to):
     plt.pie(value, labels = label, autopct='%1.0f%%', shadow = True, explode = explode)
     plt.show()
 
+# Waits for user input
 def wait():
     input("\nPress enter to continue: ")
 
+# Returns the whole CSV as a list
 def get_all_data():
-    your_path = "/home/ben/Scripts/musicMonitor/music.csv"
-
     data = []
 
-    with open(your_path, 'r') as file:
+    with open(sys.argv[1], 'r') as file:
         for lines in csv.reader(file):
             data.append(lines)
     return data
 
-
+# Iterates through the data, and groups togethor values and counts them
 def most_played(selection):
     data = get_all_data()
     selections = []
@@ -73,11 +71,12 @@ def most_played(selection):
     return sorted(selection_counted, key = sorter)
 
 
-
+# Prints data nicely
 def pretty_print(data):
     for i in range (len(data)):
         print(" | ".join(map(str, data[i])))
 
+# Gets the total of an selection and returns it, aswell as the amount of items.
 def get_total(selection):
     item = most_played(selection)
 
@@ -93,6 +92,7 @@ def get_total(selection):
 def menu():
     os.system("clear")
 
+    # Prints the menu
     print("""    1. Show whole table
     2. Most Played Songs
     3. Most Played Artists
@@ -101,8 +101,12 @@ def menu():
     6. Total songs played & total unique songs played & avg plays p/song
     7. Exit"""
     )
-#7. Clean CSV
-#6. Most Songs Played of artist of choice
+
+    # Future additions
+    #7. Clean CSV
+    #6. Most Songs Played of artist of choice
+
+    # Ensures input is int
     try:
         choice = int(input(": "))
     except:
@@ -122,27 +126,38 @@ def menu():
     #selection = 6 #??
     #selection = 7 #Date???
 
+
+    # Carrys out the functions needed to print all the data for an item.
     def execu(selection, limit_to):
         data = most_played(selection)
         pretty_print(data)
         plotter(data, limit_to)
         wait()
 
+    # Prints the whole table
     if choice == 1:
         pretty_print(get_all_data())
         wait()
 
+    # Prints the most played songs and draws graph on them
     elif choice == 2:
         execu(0, 25) # Set to -1 for all items to be on graph
+
+    # Prints the most played artists and draws graph on them
     elif choice == 3:
         execu(1, 15) # Set to -1 for all items to be on graph
+
+    # Prints the average songs played per day
     elif choice == 4:
         total, dates_count = get_total(7)
         print("Avereage songs listened to per day: " + str(total/dates_count))
         wait()
 
+    # Prints the most played songs per day and draws graph on them
     elif choice == 5:
         execu(7, 30)
+
+    # Prints the Total songs played & total unique songs played & avg plays p/song
     elif choice == 6:
         total, songs_count = get_total(0)
         print("Total number of songs listened to: " + str(total))
@@ -150,27 +165,33 @@ def menu():
         print("You play each song " + str(total/songs_count) + "x on average")
         wait()
 
+    # Exits
     elif choice == 7:
         exit()
 
 
+# Ensures theat the program gets the correct .csv path input, then starts the program
 def init():
+    # Ensures the correct amount of arguments are passed
     if len(sys.argv) != 2:
         print("You must enter only 1 argument (the file path where your music.csv is)")
         exit()
 
     else:
+        # If help needed, prints help
         if sys.argv[1] == "-h" or sys.argv[1] == "--help":
             print("Help: python3 main.py ")
             exit()
+
         else:
+            # Tests if the file passed exists, if not, alerts the user
             try:
                 file = open(sys.argv[1])
             except FileNotFoundError:
                 print(".csv containing music data not found!")
                 exit()
 
-        your_path = sys.argv[1]
+        # If here is reached then the argument passed must be good, so starts the main program
         while 1:
             menu()
 
