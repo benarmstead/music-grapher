@@ -25,11 +25,7 @@ date>, <Play time>, <Volume>`
 
 ## Running
 
-In the `main.py` file in the `get_all_data()` function. 
-
-Change the `your_path = ""` vairable to the path of your CSV
-
-`python3 main.py`
+`python3 main.py /path/to/your.csv`
 
 
 ## Image Examples
