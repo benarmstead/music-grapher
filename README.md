@@ -13,7 +13,7 @@ date>, <Play time>, <Volume>`
 
 ## Future goals
 
-- Move to a database format rather than CSV (need to convert [cmus-music-monitor](https://github.com/benarmstead/cmus-music-monitor) to this first though.)
+- Move to a database format rather than CSV (need to convert [cmus-music-monitor](https://github.com/benarmstead/cmus-music-monitor) to this first though).
 - Generate predicted usage and spot patterns with machine learning.
 - Implement more features such as different ways of viewing graphs etc.
 
