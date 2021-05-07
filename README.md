@@ -33,7 +33,8 @@ date>, <Play time>, <Volume>`
  - Ability to genearte a video of a pie chart changing over time based on your music listening habits. 
 
  (Cannot demonstrate here due to being unable to remove band names from my example video)
- (it is essentially [Most Played Artists](#most-played-artists) however animated over time)
+ 
+ (It is essentially [Most Played Artists](#most-played-artists) however animated over time)
 
 ## Feature Image Examples
 
