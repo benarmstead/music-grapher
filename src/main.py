@@ -144,7 +144,7 @@ def plotter_multi(data, limit_to, filename):
         explode.append(0.1)
 
     plt.pie(value, labels = label, autopct='%1.0f%%', shadow = True, explode = explode)
-    plt.savefig("images/" + str(filename) + ".png")
+    plt.savefig("images/" + str(filename) + ".png", dpi=250)
     plt.clf()
 
 
