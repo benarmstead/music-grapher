@@ -1,4 +1,9 @@
 # Music Grapher
+
+
+![workflow](https://github.com/benarmstead/music-grapher/actions/workflows/python-package.yml/badge.svg)
+![workflow](https://github.com/benarmstead/music-grapher/actions/workflows/codeql-analysis.yml/badge.svg)
+
 Generates graphs on users music listening habits.
 
 This is meant for processing and analysing the data from my [cmus-music-monitor](https://github.com/benarmstead/cmus-music-monitor) shell script.
