@@ -1,4 +1,4 @@
-# Music Grapher
+# **This has been replaced with the music analysis now built in to music_monitor [here](https://github.com/benarmstead/music_monitor)**
 
 
 ![workflow](https://github.com/benarmstead/music-grapher/actions/workflows/python-package.yml/badge.svg)
